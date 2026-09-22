@@ -4,8 +4,11 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 const RELAY_TOKEN = process.env.RELAY_TOKEN;
 
-app.get("/", (_req, res) => {
-  res.type("text").send("LinuxBOS relay is running.");
+app.get("/test", (_req, res) => {
+  res.json({
+    service: "linuxbos-relay",
+    status: "ok"
+  });
 });
 
 app.get("/fetch", async (req, res) => {
